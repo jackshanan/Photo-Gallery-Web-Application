@@ -1,0 +1,20 @@
+{% extends 'assignment/base.html' %}
+
+{% block content %}
+<table>
+	<tr>
+		<th> User ID </th>
+	<!--	<th> Data and Time </th>
+		<th> Image URL </th>
+		<th> Retweet Count </th>  -->
+	</tr>
+	{% for data in datastructure %}
+    <tr>
+    	<td> {{data.username}} </td>
+    <!--	<td> {{data.time_added}}</td>
+    	<td> {{data.image_url}} </td>
+    	<td> {{data.retweet_count}}</td>  -->
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
