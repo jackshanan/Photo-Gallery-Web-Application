@@ -11,10 +11,10 @@ from django.contrib.auth import logout
 from assignment.models import Album, User
 from django.core.mail import send_mail
 
-consumer_key = 'SoPaOn5tDkIkHtUT5kI2jMFMy'
-consumer_secret = 'g3eEMpKX0lUXM2Ysly43Io432pVCFzODWkIakumoGFu9GzJ3V7'
-access_token_key = '717264875844542464-faFh7QCa2lgHISQT6TEh0465XqvOcIS'
-access_token_secret = 'EKrbkUkuIJPvP4v4YJaKLJYJCFYx1NhAVEEn87xUyUk5s'
+consumer_key = ''
+consumer_secret = ''
+access_token_key = ''
+access_token_secret = ''
 
 api = TwitterAPI(consumer_key, consumer_secret, access_token_key, access_token_secret)
 
@@ -72,29 +72,6 @@ def feed(request):
 
 	total_entries_in_database = len(url_list)
 
-	check = 0		#keeps a check on number of times an email is sent
-	
-	# if((10<=total_entries_in_database and total_entries_in_database<20) and check == 0):
-	# 	check = check+1
-	# 	send_mail('#carnival has 10 photoes', "I'm Awesome!", 'srivastavalike@gmail.com', ['cute_sona93@rediffmail.com', 'sharshi@iitk.ac.in'], fail_silently=False)	
-
-	# if((20<=total_entries_in_database and total_entries_in_database<30) and check == 0):
-	# 	check = check+1
-	# 	send_mail('#carnival has 20 photoes', "I'm Awesome!", 'srivastavalike@gmail.com', ['cute_sona93@rediffmail.com', 'sharshi@iitk.ac.in'], fail_silently=False)	
-
-	# if((30<=total_entries_in_database and total_entries_in_database<40) and check == 0):
-	# 	check = check+1
-	# 	send_mail('#carnival has 30 photoes', "I'm Awesome!", 'srivastavalike@gmail.com', ['cute_sona93@rediffmail.com', 'sharshi@iitk.ac.in'], fail_silently=False)	
-
-	# if((40<=total_entries_in_database and total_entries_in_database<50) and check == 0):
-	# 	check = check+1
-	# 	send_mail('#carnival has 40 photoes', "I'm Awesome!", 'srivastavalike@gmail.com', ['cute_sona93@rediffmail.com', 'sharshi@iitk.ac.in'], fail_silently=False)	
-
-	# if(50<=total_entries_in_database and check == 0):
-	# 	check = check + 1
-	# 	send_mail('#carnival has 50 photoes', "I'm Awesome!", 'srivastavalike@gmail.com', ['cute_sona93@rediffmail.com', 'sharshi@iitk.ac.in'], fail_silently=False)	
-
-
 	return render(request, 'assignment/feed.html', {'url_list': url_list})
 
 def register(request):
@@ -140,8 +117,3 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect('/')
-
-
-#def post_to_facebook(request):
-#	facebook = OpenFacebook(access_token)
-#	facebook.set('me/feed', message='localhost:8000', url = )
